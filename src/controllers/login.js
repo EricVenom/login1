@@ -3,6 +3,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const jwtPassword = require('../jwtpass');
 
+const root = async (req, res) => {
+    return res.json({ message: "I'm running." })
+}
+
 const signUp = async (req, res) => {
     const { name, username, email, password } = req.body
 
@@ -55,9 +59,8 @@ const login = async (req, res) => {
     }
 }
 
-
-
 module.exports = {
+    root,
     signUp,
     login
 }
